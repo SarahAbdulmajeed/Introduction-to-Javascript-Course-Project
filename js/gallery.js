@@ -1,31 +1,23 @@
 window.onload = function () {
-  var my_images = document.querySelectorAll("img.preview"); // Select only images with class 'preview'
+  var my_images = document.querySelectorAll("img.preview");
 
   for (let i = 0; i < my_images.length; i++) {
-    // Event listeners for mouse events
-    my_images[i].addEventListener('mouseover', function() { 
-      upDate(this); 
-      console.log('Mouseover event for image: ' + my_images[i].alt);
-    });
-    my_images[i].addEventListener('mouseout', function() { 
-      unDo(); 
-      console.log('Mouseout event for image: ' + my_images[i].alt);
-    });
+    // Add event listeners for mouse events
+    my_images[i].addEventListener('mouseover', function() { upDate(this); });
+    my_images[i].addEventListener('mouseout', unDo);
 
-    // Event listeners for focus events
-    my_images[i].addEventListener('focus', function() { 
-      upDate(this); 
-      console.log('Focus event for image: ' + my_images[i].alt);
-    });
-    my_images[i].addEventListener('blur', function() { 
-      unDo(); 
-      console.log('Blur event for image: ' + my_images[i].alt);
-    });
+    // Add event listeners for focus events
+    my_images[i].addEventListener('focus', function() { upDate(this); });
+    my_images[i].addEventListener('blur', unDo);
 
-    // tabindex attribute for keyboard navigation
+    // Log the event setup
+    console.log('Event listeners added for image: ' + my_images[i].alt);
+
+    // Add tabindex attribute for keyboard navigation
     my_images[i].setAttribute('tabindex', '0');
   }
 };
+
 
 function upDate(previewPic) {
   document.getElementById('image').innerHTML = previewPic.alt;
