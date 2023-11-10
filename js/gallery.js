@@ -5,21 +5,21 @@ window.onload = function () {
     // Event listeners for mouse events
     my_images[i].addEventListener('mouseover', function() { 
       upDate(this); 
-      console.log('Mouseover event added for image: ' + my_images[i].alt);
+      console.log('Mouseover event for image: ' + my_images[i].alt);
     });
     my_images[i].addEventListener('mouseout', function() { 
       unDo(); 
-      console.log('Mouseout event added for image: ' + my_images[i].alt);
+      console.log('Mouseout event for image: ' + my_images[i].alt);
     });
 
     // Event listeners for focus events
     my_images[i].addEventListener('focus', function() { 
       upDate(this); 
-      console.log('Focus event added for image: ' + my_images[i].alt);
+      console.log('Focus event for image: ' + my_images[i].alt);
     });
     my_images[i].addEventListener('blur', function() { 
       unDo(); 
-      console.log('Blur event added for image: ' + my_images[i].alt);
+      console.log('Blur event for image: ' + my_images[i].alt);
     });
 
     // tabindex attribute for keyboard navigation
